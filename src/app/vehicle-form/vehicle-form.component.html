@@ -1,0 +1,20 @@
+<form ngForm #myForm="ngForm">
+    VIN:<br/>
+    <input type="text" name="veh_vin" ngModel/><br/>
+    Year:<br/>
+    <input type="number" name="veh_year" ngModel/><br/>
+    Make:<br/>
+    <input type="text" name="veh_make" ngModel/><br/>
+    Model:<br/>
+    <input type="text" name="veh_model" ngModel/><br/>
+    Mileage:<br/>
+    <input type="number" name="veh_mileage" ngModel/><br/>
+    Price:<br/>
+    <input type="number" name="veh_price" ngModel/><br/>
+    <label>
+    <input type="checkbox" name="veh_featured" ngModel/>
+    Featured vehicle
+    </label>
+    <br/>
+    <button (click)="handleSubmit(myForm)">Submit</button>
+    </form>

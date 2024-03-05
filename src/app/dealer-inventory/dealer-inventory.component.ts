@@ -7,6 +7,10 @@ import { Vehicle } from './vehicle'
   styleUrls: ['./dealer-inventory.component.css']
 })
 export class DealerInventoryComponent {
+
+  addVehicle(v:Vehicle) {
+    this.inventory.push(v)
+    }
     inventory:Vehicle[] = [
     {
     VIN: "Y123",
@@ -50,4 +54,18 @@ export class DealerInventoryComponent {
     photos: []
     },
     ]
+
+    trackByVIN(index:number, car:Vehicle) : string {
+      return car.VIN
+      }
+
+      deleteVehicle(car:Vehicle) {
+        this.inventory = this.inventory.filter(c => c.VIN != car.VIN)
+        }
+
+        handlePhotoNavigation(photoIndex:number, car:Vehicle) {
+          if (photoIndex == car.photos.length - 1) {
+          alert("Come visit us in our showroom!")
+          }
+          }
 }
